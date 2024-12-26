@@ -34,12 +34,16 @@ const Terminal = () => {
       case "help":
         output = <HelpCommand />;
         break;
-      case "shiva":
-        output = "Hello there! I'm Shiva, a Full Stack Developer experienced in the MERN stack.";
+      case "pranav":
+        output = "Hello there! I'm Pranav, a Full Stack Developer experienced in the MERN stack.";
         break;
       case "about":
-        window.location.href = "#about";
+        window.location.href = "/about";
         output = "Navigating to about section...";
+        break;
+      case "blog":
+        window.location.href = "/blog";
+        output = "Navigating to blog section...";
         break;
       case "clear":
         setCommands([]);
