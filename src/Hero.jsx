@@ -63,8 +63,36 @@ const HeroSection = () => {
             }`}
           >
             <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors flex items-center gap-2">
-                View Projects <Code size={20} />
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText('npx pranawww');
+                  const notification = document.createElement('div');
+                  notification.className = 'fixed bottom-4 right-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 flex items-center gap-2';
+                  notification.innerHTML = 'Copied to clipboard!';
+                  document.body.appendChild(notification);
+                  
+                  setTimeout(() => {
+                    notification.style.opacity = '0';
+                    setTimeout(() => notification.remove(), 300);
+                  }, 3000);
+                }}
+                className="group relative bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-6 py-3 rounded-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.25)] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.25)] dark:hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.25)] active:translate-y-[4px] active:translate-x-[4px] active:shadow-none transition-all duration-200 flex items-center gap-2"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-5 w-5" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </svg>
+                <span>npx pranawww</span>
               </button>
               <button className="px-6 py-3 border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
                 Contact Me
@@ -118,7 +146,7 @@ const HeroSection = () => {
 
     
       </div>
-      <Skills /> 
+
 
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-100 dark:bg-blue-900/50 rounded-full filter blur-3xl opacity-20 -z-10"></div>
